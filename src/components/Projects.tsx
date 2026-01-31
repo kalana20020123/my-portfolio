@@ -42,6 +42,27 @@ const projects: Project[] = [
   },
 ];
 
+const upcomingProjects: Project[] = [
+  {
+    name: "PDF to Word Converter",
+    description:
+      "A powerful web application for converting PDF documents to editable Word format with high accuracy and formatting preservation.",
+    techStack: ["Next.js", "TypeScript", "PDF.js", "docx", "Tailwind CSS"],
+    image: "/images/project1.png", // Placeholder - you can add specific images later
+    githubUrl: "#",
+    liveUrl: "#",
+  },
+  {
+    name: "AI Resume Analyzer & Job Matcher",
+    description:
+      "An intelligent platform that analyzes resumes using AI, provides improvement suggestions, and matches candidates with relevant job opportunities.",
+    techStack: ["React", "Node.js", "OpenAI API", "MongoDB", "Express.js"],
+    image: "/images/project2.jpg", // Placeholder - you can add specific images later
+    githubUrl: "#",
+    liveUrl: "#",
+  },
+];
+
 export default function Projects() {
   return (
     <section id="projects" className="relative py-24 px-4 md:py-32 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-[#0a0e1a] dark:via-[#0d0f14] dark:to-[#050608]">
@@ -131,6 +152,63 @@ export default function Projects() {
             </div>
           ))}
         </div>
+
+        {/* Upcoming Projects Section */}
+        {upcomingProjects.length > 0 && (
+          <>
+            <div className="text-center mt-24 md:mt-32 mb-16 md:mb-20">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
+                Upcoming Projects
+              </h2>
+              <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-purple-600 dark:via-purple-400 to-transparent mx-auto"></div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {upcomingProjects.map((project, index) => (
+                <div
+                  key={index}
+                  className="group relative bg-white/80 dark:bg-[rgba(255,255,255,0.02)] backdrop-blur-sm rounded-xl border border-gray-200 dark:border-[rgba(255,255,255,0.08)] hover:border-purple-400 dark:hover:border-[rgba(168,85,247,0.3)] transition-all duration-300 hover:bg-purple-50/50 dark:hover:bg-[rgba(168,85,247,0.05)] hover:shadow-xl dark:hover:shadow-[0_8px_32px_rgba(168,85,247,0.15)] hover:-translate-y-1 overflow-hidden flex flex-col opacity-90"
+                >
+                  {/* Coming Soon Badge */}
+                  <div className="absolute top-4 right-4 z-20">
+                    <span className="px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold rounded-full shadow-lg">
+                      Coming Soon
+                    </span>
+                  </div>
+
+                  {/* Project Content */}
+                  <div className="p-6 md:p-8 flex flex-col flex-1">
+                    {/* Project Name */}
+                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
+                      {project.name}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed mb-6 flex-1">
+                      {project.description}
+                    </p>
+
+                    {/* Action Buttons - Disabled for upcoming projects */}
+                    <div className="flex gap-3 mt-auto">
+                      <button
+                        disabled
+                        className="flex-1 px-4 py-2.5 bg-gray-100 dark:bg-[rgba(255,255,255,0.05)] border border-gray-300 dark:border-[rgba(255,255,255,0.1)] text-gray-400 dark:text-gray-500 text-sm font-medium rounded-lg cursor-not-allowed opacity-50"
+                      >
+                        GitHub
+                      </button>
+                      <button
+                        disabled
+                        className="flex-1 px-4 py-2.5 bg-gradient-to-r from-purple-500/50 to-pink-500/50 border border-purple-400/50 dark:border-[rgba(168,85,247,0.3)] text-white/50 text-sm font-medium rounded-lg cursor-not-allowed opacity-50"
+                      >
+                        Live Demo
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </section>
   );
