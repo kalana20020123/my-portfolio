@@ -19,7 +19,7 @@ const projects: Project[] = [
       "A comprehensive mobile application for tracking personal finances and managing budgets with intuitive user interface.",
     techStack: ["Kotlin", "XML", "Shared Preferences"],
     image: "/images/project1.png",
-    githubUrl: "#",
+    githubUrl: "https://github.com/kalana20020123/Finance-tracker-app",
     liveUrl: "#",
   },
   {
@@ -28,8 +28,8 @@ const projects: Project[] = [
       "A full-stack e-commerce platform for beauty products featuring product catalog, user authentication, and secure payment processing.",
     techStack: ["React.js", "Express.js", "Node.js", "Tailwind CSS", "MongoDB"],
     image: "/images/project2.jpg",
-    githubUrl: "#",
-    liveUrl: "#",
+    githubUrl: "https://github.com/kalana20020123/Beauty-Products-Platform",
+    liveUrl: "https://beauty-products-platform.vercel.app/",
   },
   {
     name: "My Portfolio",
@@ -37,25 +37,25 @@ const projects: Project[] = [
       "A modern, responsive portfolio website showcasing projects and skills with smooth animations, 3D elements, and interactive components.",
     techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Three.js"],
     image: "/images/project3.png",
-    githubUrl: "#",
-    liveUrl: "#",
+    githubUrl: "https://github.com/kalana20020123/my-portfolio",
+    liveUrl: "https://my-portfolio20020223.vercel.app/",
   },
 ];
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative py-24 px-4 md:py-32 overflow-hidden">
+    <section id="projects" className="relative py-24 px-4 md:py-32 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-[#0a0e1a] dark:via-[#0d0f14] dark:to-[#050608]">
       {/* Background matching portfolio style */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0a0e1a] via-[#0d0f14] to-[#050608]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(59,130,246,0.03)_0%,_transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-purple-50/30 dark:from-[#0a0e1a] dark:via-[#0d0f14] dark:to-[#050608]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(59,130,246,0.1)_0%,_transparent_50%)] dark:bg-[radial-gradient(ellipse_at_top,_rgba(59,130,246,0.03)_0%,_transparent_50%)]"></div>
       
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
             Projects
           </h2>
-          <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-blue-400 to-transparent mx-auto"></div>
+          <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-blue-600 dark:via-blue-400 to-transparent mx-auto"></div>
         </div>
 
         {/* Projects Grid */}
@@ -63,10 +63,10 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-[rgba(255,255,255,0.02)] backdrop-blur-sm rounded-xl border border-[rgba(255,255,255,0.08)] hover:border-[rgba(59,130,246,0.3)] transition-all duration-300 hover:bg-[rgba(59,130,246,0.05)] hover:shadow-[0_8px_32px_rgba(59,130,246,0.15)] hover:-translate-y-1 overflow-hidden flex flex-col"
+              className="group relative bg-white/80 dark:bg-[rgba(255,255,255,0.02)] backdrop-blur-sm rounded-xl border border-gray-200 dark:border-[rgba(255,255,255,0.08)] hover:border-blue-400 dark:hover:border-[rgba(59,130,246,0.3)] transition-all duration-300 hover:bg-blue-50/50 dark:hover:bg-[rgba(59,130,246,0.05)] hover:shadow-xl dark:hover:shadow-[0_8px_32px_rgba(59,130,246,0.15)] hover:-translate-y-1 overflow-hidden flex flex-col"
             >
               {/* Project Image */}
-              <div className="relative w-full flex items-center justify-center overflow-hidden bg-[rgba(0,0,0,0.2)] p-4">
+              <div className="relative w-full flex items-center justify-center overflow-hidden bg-gray-100 dark:bg-[rgba(0,0,0,0.2)] p-4">
                 <div className="relative w-full">
                   <Image
                     src={project.image}
@@ -78,18 +78,18 @@ export default function Projects() {
                     unoptimized
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.6)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 dark:from-[rgba(0,0,0,0.6)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
               </div>
 
               {/* Project Content */}
               <div className="p-6 md:p-8 flex flex-col flex-1">
                 {/* Project Name */}
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                   {project.name}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-6 flex-1">
+                <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed mb-6 flex-1">
                   {project.description}
                 </p>
 
@@ -98,7 +98,7 @@ export default function Projects() {
                   {project.techStack.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1.5 bg-[rgba(59,130,246,0.1)] border border-[rgba(59,130,246,0.2)] text-blue-300 rounded-lg text-xs md:text-sm font-medium group-hover:bg-[rgba(59,130,246,0.15)] group-hover:border-[rgba(59,130,246,0.3)] transition-all duration-300"
+                      className="px-3 py-1.5 bg-blue-100 dark:bg-[rgba(59,130,246,0.1)] border border-blue-300 dark:border-[rgba(59,130,246,0.2)] text-blue-700 dark:text-blue-300 rounded-lg text-xs md:text-sm font-medium group-hover:bg-blue-200 dark:group-hover:bg-[rgba(59,130,246,0.15)] group-hover:border-blue-400 dark:group-hover:border-[rgba(59,130,246,0.3)] transition-all duration-300"
                     >
                       {tech}
                     </span>
@@ -109,13 +109,20 @@ export default function Projects() {
                 <div className="flex gap-3 mt-auto">
                   <a
                     href={project.githubUrl}
-                    className="flex-1 px-4 py-2.5 bg-[rgba(255,255,255,0.05)] hover:bg-[rgba(59,130,246,0.2)] border border-[rgba(255,255,255,0.1)] hover:border-[rgba(59,130,246,0.4)] text-white text-sm font-medium rounded-lg transition-all duration-300 text-center hover:shadow-[0_4px_12px_rgba(59,130,246,0.2)]"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 px-4 py-2.5 bg-gray-100 dark:bg-[rgba(255,255,255,0.05)] hover:bg-gray-200 dark:hover:bg-[rgba(59,130,246,0.2)] border border-gray-300 dark:border-[rgba(255,255,255,0.1)] hover:border-gray-400 dark:hover:border-[rgba(59,130,246,0.4)] text-gray-900 dark:text-white text-sm font-medium rounded-lg transition-all duration-300 text-center hover:shadow-md dark:hover:shadow-[0_4px_12px_rgba(59,130,246,0.2)]"
                   >
                     GitHub
                   </a>
                   <a
-                    href={project.liveUrl}
-                    className="flex-1 px-4 py-2.5 bg-gradient-to-r from-blue-500/20 to-purple-500/20 hover:from-blue-500/30 hover:to-purple-500/30 border border-[rgba(59,130,246,0.3)] hover:border-[rgba(59,130,246,0.5)] text-white text-sm font-medium rounded-lg transition-all duration-300 text-center hover:shadow-[0_4px_12px_rgba(59,130,246,0.3)]"
+                    href={project.liveUrl === "#" ? "#" : project.liveUrl}
+                    target={project.liveUrl === "#" ? "_self" : "_blank"}
+                    rel={project.liveUrl === "#" ? "" : "noopener noreferrer"}
+                    className={`flex-1 px-4 py-2.5 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 dark:from-blue-500/20 dark:to-purple-500/20 dark:hover:from-blue-500/30 dark:hover:to-purple-500/30 border border-blue-400 dark:border-[rgba(59,130,246,0.3)] hover:border-blue-500 dark:hover:border-[rgba(59,130,246,0.5)] text-white text-sm font-medium rounded-lg transition-all duration-300 text-center hover:shadow-lg dark:hover:shadow-[0_4px_12px_rgba(59,130,246,0.3)] ${
+                      project.liveUrl === "#" ? "opacity-60 cursor-not-allowed" : ""
+                    }`}
+                    onClick={project.liveUrl === "#" ? (e) => e.preventDefault() : undefined}
                   >
                     Live Demo
                   </a>

@@ -763,20 +763,42 @@ export default function Hero() {
   }, [titles.length]);
 
   return (
-    <section id="home" className="relative min-h-screen flex flex-col md:flex-row items-center justify-center px-4 py-20 overflow-hidden">
-      {/* CSS Background Gradient Overlay - Deep Navy, Charcoal, Black */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0a0e1a] via-[#0d0f14] to-[#050608] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_50%,_rgba(8,12,20,0.9)_100%)] pointer-events-none" />
+    <section id="home" className="relative min-h-screen flex flex-col md:flex-row items-center justify-center px-4 py-20 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-[#0a0e1a] dark:via-[#0d0f14] dark:to-[#050608]">
+      {/* CSS Background Gradient Overlay - Light mode: subtle, Dark mode: Deep Navy, Charcoal, Black */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-purple-50/30 dark:from-[#0a0e1a] dark:via-[#0d0f14] dark:to-[#050608] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(59,130,246,0.1)_0%,_transparent_70%)] dark:bg-[radial-gradient(ellipse_at_center,_transparent_50%,_rgba(8,12,20,0.9)_100%)] pointer-events-none" />
       
       <div className="relative z-10 flex-1 max-w-2xl space-y-6 mb-12 md:mb-0 md:pr-8">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
-          Hi, I'm <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">Kalana Sandeep</span>👋
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.1)] dark:drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+          Hi, I'm <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 dark:from-blue-400 dark:via-blue-500 dark:to-purple-500 bg-clip-text text-transparent">Kalana Sandeep</span>👋
         </h1>
         <p className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 min-h-[3rem] md:min-h-[4rem]">
-          <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-500 bg-clip-text text-transparent drop-shadow-[0_2px_6px_rgba(59,130,246,0.15)]">
+          <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 dark:from-blue-400 dark:via-purple-400 dark:to-blue-500 bg-clip-text text-transparent drop-shadow-[0_2px_6px_rgba(59,130,246,0.2)] dark:drop-shadow-[0_2px_6px_rgba(59,130,246,0.15)]">
             {titles[currentTitleIndex]}
           </span>
         </p>
+        <div className="flex flex-col sm:flex-row gap-4 mt-8">
+          <a
+            href="/CV.pdf"
+            download="Kalana_Sandeep_CV.pdf"
+            className="group relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 dark:from-blue-500 dark:via-blue-600 dark:to-purple-500 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-500 hover:via-blue-600 hover:to-purple-500 dark:hover:from-blue-400 dark:hover:via-blue-500 dark:hover:to-purple-400"
+          >
+            <svg
+              className="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              />
+            </svg>
+            Download CV
+          </a>
+        </div>
       </div>
       <div 
         ref={canvasRef}

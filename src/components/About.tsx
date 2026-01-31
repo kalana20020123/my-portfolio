@@ -165,25 +165,25 @@ export default function About() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="relative py-24 px-4 md:py-32 overflow-hidden">
+    <section ref={sectionRef} id="about" className="relative py-24 px-4 md:py-32 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-[#0a0e1a] dark:via-[#0d0f14] dark:to-[#050608]">
       {/* Minimal Background with Subtle Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0a0e1a] via-[#0d0f14] to-[#050608]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(59,130,246,0.03)_0%,_transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-purple-50/30 dark:from-[#0a0e1a] dark:via-[#0d0f14] dark:to-[#050608]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(59,130,246,0.1)_0%,_transparent_50%)] dark:bg-[radial-gradient(ellipse_at_top,_rgba(59,130,246,0.03)_0%,_transparent_50%)]"></div>
       
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-20 md:mb-24">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
             About Me
           </h2>
-          <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-blue-400 to-transparent mx-auto"></div>
+          <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-blue-600 dark:via-blue-400 to-transparent mx-auto"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* 3D Model Section */}
           <div 
             ref={canvasRef}
-            className="w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-xl overflow-hidden bg-gradient-to-br from-[rgba(59,130,246,0.05)] to-[rgba(139,92,246,0.05)] backdrop-blur-sm border border-[rgba(255,255,255,0.05)]"
+            className="w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-xl overflow-hidden bg-gradient-to-br from-blue-100/50 to-purple-100/50 dark:from-[rgba(59,130,246,0.05)] dark:to-[rgba(139,92,246,0.05)] backdrop-blur-sm border border-blue-200/50 dark:border-[rgba(255,255,255,0.05)]"
           >
             <Canvas camera={{ position: [0, 1.5, 6], fov: 45 }}>
               <Scene mousePosition={mousePosition} scrollProgress={scrollProgress} />
@@ -196,13 +196,13 @@ export default function About() {
               {/* Subtle glow effect */}
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 rounded-2xl blur-xl"></div>
               
-              <div className="relative bg-[rgba(255,255,255,0.02)] backdrop-blur-sm p-8 md:p-10 lg:p-12 rounded-2xl border border-[rgba(255,255,255,0.08)] shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
-                <div className="space-y-6 text-lg md:text-xl text-gray-200 leading-relaxed">
+              <div className="relative bg-white/80 dark:bg-[rgba(255,255,255,0.02)] backdrop-blur-sm p-8 md:p-10 lg:p-12 rounded-2xl border border-gray-200 dark:border-[rgba(255,255,255,0.08)] shadow-lg dark:shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
+                <div className="space-y-6 text-lg md:text-xl text-gray-700 dark:text-gray-200 leading-relaxed">
                   <p className="font-light">
-                    I'm a passionate <span className="text-blue-400 font-medium">Software Engineer</span> focused on building reliable, user-friendly web and mobile applications. I enjoy working across the full development process, from understanding requirements to delivering polished solutions.
+                    I'm a passionate <span className="text-blue-600 dark:text-blue-400 font-medium">Software Engineer</span> focused on building reliable, user-friendly web and mobile applications. I enjoy working across the full development process, from understanding requirements to delivering polished solutions.
                   </p>
                   <p className="font-light">
-                    I'm driven by <span className="text-purple-400 font-medium">problem-solving</span>, <span className="text-blue-400 font-medium">continuous learning</span>, and creating products that make a real impact.
+                    I'm driven by <span className="text-purple-600 dark:text-purple-400 font-medium">problem-solving</span>, <span className="text-blue-600 dark:text-blue-400 font-medium">continuous learning</span>, and creating products that make a real impact.
                   </p>
                 </div>
               </div>

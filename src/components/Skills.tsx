@@ -50,18 +50,18 @@ const skills: Skill[] = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative py-24 px-4 md:py-32 overflow-hidden">
+    <section id="skills" className="relative py-24 px-4 md:py-32 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-[#0a0e1a] dark:via-[#0d0f14] dark:to-[#050608]">
       {/* Background matching portfolio style */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0a0e1a] via-[#0d0f14] to-[#050608]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(59,130,246,0.03)_0%,_transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-purple-50/30 dark:from-[#0a0e1a] dark:via-[#0d0f14] dark:to-[#050608]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(59,130,246,0.1)_0%,_transparent_50%)] dark:bg-[radial-gradient(ellipse_at_top,_rgba(59,130,246,0.03)_0%,_transparent_50%)]"></div>
       
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
             Skills
           </h2>
-          <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-blue-400 to-transparent mx-auto"></div>
+          <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-blue-600 dark:via-blue-400 to-transparent mx-auto"></div>
         </div>
 
         {/* Skills Grid */}
@@ -71,7 +71,7 @@ export default function Skills() {
             return (
               <div
                 key={skill.name}
-                className="group relative bg-[rgba(255,255,255,0.02)] backdrop-blur-sm px-4 py-5 rounded-lg border border-[rgba(255,255,255,0.08)] hover:border-[rgba(59,130,246,0.3)] transition-all duration-300 text-center hover:bg-[rgba(59,130,246,0.05)] hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)] flex flex-col items-center justify-center gap-2"
+                className="group relative bg-white/80 dark:bg-[rgba(255,255,255,0.02)] backdrop-blur-sm px-4 py-5 rounded-lg border border-gray-200 dark:border-[rgba(255,255,255,0.08)] hover:border-blue-400 dark:hover:border-[rgba(59,130,246,0.3)] transition-all duration-300 text-center hover:bg-blue-50 dark:hover:bg-[rgba(59,130,246,0.05)] hover:shadow-lg dark:hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)] flex flex-col items-center justify-center gap-2"
               >
                 <span 
                   className="text-3xl md:text-4xl transition-all duration-300 group-hover:scale-110 inline-block" 
@@ -79,7 +79,7 @@ export default function Skills() {
                 >
                   <IconComponent />
                 </span>
-                <p className="text-xs md:text-sm font-medium text-gray-200 group-hover:text-white transition-colors duration-300">
+                <p className="text-xs md:text-sm font-medium text-gray-700 dark:text-gray-200 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">
                   {skill.name}
                 </p>
               </div>

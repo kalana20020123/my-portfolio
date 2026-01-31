@@ -67,19 +67,19 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative py-24 px-4 md:py-32 overflow-hidden">
+    <section id="contact" className="relative py-24 px-4 md:py-32 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-[#0a0e1a] dark:via-[#0d0f14] dark:to-[#050608]">
       {/* Background matching portfolio style */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0a0e1a] via-[#0d0f14] to-[#050608]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(59,130,246,0.03)_0%,_transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-purple-50/30 dark:from-[#0a0e1a] dark:via-[#0d0f14] dark:to-[#050608]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(59,130,246,0.1)_0%,_transparent_50%)] dark:bg-[radial-gradient(ellipse_at_top,_rgba(59,130,246,0.03)_0%,_transparent_50%)]"></div>
       
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
             Get In Touch
           </h2>
-          <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-blue-400 to-transparent mx-auto mb-8"></div>
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+          <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-blue-600 dark:via-blue-400 to-transparent mx-auto mb-8"></div>
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
             I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology. Feel free to reach out through any of the channels below.
           </p>
         </div>
@@ -95,25 +95,25 @@ export default function Contact() {
               className="group relative"
             >
               {/* Glow effect */}
-              <div className={`absolute -inset-0.5 bg-gradient-to-r ${method.color} rounded-xl opacity-0 group-hover:opacity-20 blur transition-opacity duration-300`}></div>
+              <div className={`absolute -inset-0.5 bg-gradient-to-r ${method.color} rounded-xl opacity-0 group-hover:opacity-20 dark:group-hover:opacity-20 blur transition-opacity duration-300`}></div>
               
               {/* Card */}
-              <div className="relative bg-[rgba(255,255,255,0.02)] backdrop-blur-sm p-8 rounded-xl border border-[rgba(255,255,255,0.08)] hover:border-[rgba(59,130,246,0.3)] transition-all duration-300 hover:bg-[rgba(59,130,246,0.05)] hover:shadow-[0_8px_32px_rgba(59,130,246,0.15)] hover:-translate-y-1">
+              <div className="relative bg-white/80 dark:bg-[rgba(255,255,255,0.02)] backdrop-blur-sm p-8 rounded-xl border border-gray-200 dark:border-[rgba(255,255,255,0.08)] hover:border-blue-400 dark:hover:border-[rgba(59,130,246,0.3)] transition-all duration-300 hover:bg-blue-50/50 dark:hover:bg-[rgba(59,130,246,0.05)] hover:shadow-xl dark:hover:shadow-[0_8px_32px_rgba(59,130,246,0.15)] hover:-translate-y-1">
                 {/* Icon */}
                 <div className={`inline-flex p-3 rounded-lg bg-gradient-to-br ${method.color} ${method.hoverColor} text-white mb-4 transition-all duration-300 group-hover:scale-110`}>
                   {method.icon}
                 </div>
                 
                 {/* Content */}
-                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                   {method.name}
                 </h3>
-                <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300 break-all">
+                <p className="text-sm text-gray-600 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-gray-300 transition-colors duration-300 break-all">
                   {method.value}
                 </p>
                 
                 {/* Arrow indicator */}
-                <div className="mt-4 flex items-center text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="mt-4 flex items-center text-blue-600 dark:text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <span className="text-sm font-medium mr-2">
                     {method.external ? "Visit" : "Send"}
                   </span>
@@ -138,7 +138,7 @@ export default function Contact() {
 
         {/* Additional CTA */}
         <div className="mt-16 text-center">
-          <p className="text-gray-400 text-sm md:text-base">
+          <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base">
             Prefer a different method? Let's connect and find the best way to collaborate.
           </p>
         </div>
