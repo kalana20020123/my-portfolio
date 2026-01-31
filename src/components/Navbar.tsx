@@ -45,29 +45,6 @@ export default function Navbar() {
     }
   };
 
-  const handleDownloadCV = async (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    try {
-      const response = await fetch('/CV.pdf');
-      if (!response.ok) {
-        throw new Error('Failed to fetch CV');
-      }
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'Kalana_Sandeep_CV.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error('Error downloading CV:', error);
-      // Fallback to direct link
-      window.open('/CV.pdf', '_blank');
-    }
-  };
-
   return (
     <>
       {/* Top Navbar */}
@@ -92,14 +69,6 @@ export default function Navbar() {
                 {link.name}
               </button>
             ))}
-            <a
-              href="/CV.pdf"
-              download="Kalana_Sandeep_CV.pdf"
-              onClick={handleDownloadCV}
-              className="px-4 py-2 text-sm lg:text-base font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-500 dark:to-purple-500 hover:from-blue-500 hover:to-purple-500 dark:hover:from-blue-400 dark:hover:to-purple-400 rounded-lg transition-all duration-200 hover:shadow-lg"
-            >
-              CV
-            </a>
           </div>
 
           {/* Theme Toggle */}
