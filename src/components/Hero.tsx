@@ -762,6 +762,29 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, [titles.length]);
 
+  const handleDownloadCV = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('/CV.pdf');
+      if (!response.ok) {
+        throw new Error('Failed to fetch CV');
+      }
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'Kalana_Sandeep_CV.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Error downloading CV:', error);
+      // Fallback to direct link
+      window.open('/CV.pdf', '_blank');
+    }
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex flex-col md:flex-row items-center justify-center px-4 py-20 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-[#0a0e1a] dark:via-[#0d0f14] dark:to-[#050608]">
       {/* CSS Background Gradient Overlay - Light mode: subtle, Dark mode: Deep Navy, Charcoal, Black */}
@@ -777,11 +800,12 @@ export default function Hero() {
             {titles[currentTitleIndex]}
           </span>
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 mt-8">
+        <div className="flex gap-4 mt-8">
           <a
             href="/CV.pdf"
             download="Kalana_Sandeep_CV.pdf"
-            className="group relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 dark:from-blue-500 dark:via-blue-600 dark:to-purple-500 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-500 hover:via-blue-600 hover:to-purple-500 dark:hover:from-blue-400 dark:hover:via-blue-500 dark:hover:to-purple-400"
+            onClick={handleDownloadCV}
+            className="group relative inline-flex items-center px-6 py-3 text-base font-semibold text-white bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 dark:from-blue-500 dark:via-blue-600 dark:to-purple-500 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-500 hover:via-blue-600 hover:to-purple-500 dark:hover:from-blue-400 dark:hover:via-blue-500 dark:hover:to-purple-400"
           >
             <svg
               className="w-5 h-5 mr-2"

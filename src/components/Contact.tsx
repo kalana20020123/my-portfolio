@@ -3,6 +3,28 @@
 import React from "react";
 
 export default function Contact() {
+  const handleDownloadCV = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('/CV.pdf');
+      if (!response.ok) {
+        throw new Error('Failed to fetch CV');
+      }
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'Kalana_Sandeep_CV.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Error downloading CV:', error);
+      // Fallback to direct link
+      window.open('/CV.pdf', '_blank');
+    }
+  };
   const contactMethods = [
     {
       name: "Email",
@@ -25,6 +47,29 @@ export default function Contact() {
       ),
       color: "from-blue-500 to-blue-600",
       hoverColor: "hover:from-blue-400 hover:to-blue-500",
+    },
+    {
+      name: "Download CV",
+      value: "Resume / Curriculum Vitae",
+      href: "/CV.pdf",
+      download: true,
+      icon: (
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+          />
+        </svg>
+      ),
+      color: "from-purple-500 to-purple-600",
+      hoverColor: "hover:from-purple-400 hover:to-purple-500",
     },
     {
       name: "LinkedIn",
@@ -90,6 +135,8 @@ export default function Contact() {
             <a
               key={method.name}
               href={method.href}
+              download={method.download ? "Kalana_Sandeep_CV.pdf" : undefined}
+              onClick={method.download ? handleDownloadCV : undefined}
               target={method.external ? "_blank" : undefined}
               rel={method.external ? "noopener noreferrer" : undefined}
               className="group relative"
@@ -115,7 +162,7 @@ export default function Contact() {
                 {/* Arrow indicator */}
                 <div className="mt-4 flex items-center text-blue-600 dark:text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <span className="text-sm font-medium mr-2">
-                    {method.external ? "Visit" : "Send"}
+                    {method.download ? "Download" : method.external ? "Visit" : "Send"}
                   </span>
                   <svg
                     className="w-4 h-4"
@@ -127,7 +174,7 @@ export default function Contact() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      d={method.download ? "M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" : "M13 7l5 5m0 0l-5 5m5-5H6"}
                     />
                   </svg>
                 </div>
