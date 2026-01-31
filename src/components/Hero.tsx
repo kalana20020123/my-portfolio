@@ -763,7 +763,7 @@ export default function Hero() {
   }, [titles.length]);
 
   return (
-    <section className="relative min-h-screen flex flex-col md:flex-row items-center justify-center px-4 py-20 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex flex-col md:flex-row items-center justify-center px-4 py-20 overflow-hidden">
       {/* CSS Background Gradient Overlay - Deep Navy, Charcoal, Black */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0a0e1a] via-[#0d0f14] to-[#050608] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_50%,_rgba(8,12,20,0.9)_100%)] pointer-events-none" />
