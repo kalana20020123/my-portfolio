@@ -1,8 +1,8 @@
 "use client";
 
-import React, { Suspense, useState, useEffect, useRef } from "react";
+import { Suspense, useState, useEffect, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useGLTF, Environment, useAnimations } from "@react-three/drei";
+import { useGLTF, Environment } from "@react-three/drei";
 import * as THREE from "three";
 
 function BoyModel({ 
@@ -44,8 +44,6 @@ function BoyModel({
         // Make animations loop smoothly (setLoop takes mode and repetitions)
         action.setLoop(THREE.LoopRepeat, Infinity);
       });
-      
-      console.log(`Playing ${animations.length} animation(s) from model`);
     }
   }, [animations]);
 
@@ -116,14 +114,6 @@ function BoyModel({
 
       eyeRefs.current = eyes.slice(0, 2);
       morphTargetInfluencesRef.current = morphTargets;
-      
-      // Debug: log found eyes (can be removed in production)
-      if (eyes.length > 0) {
-        console.log(`Found ${eyes.length} eye(s) for blinking animation`);
-      }
-      if (morphTargets.length > 0) {
-        console.log(`Found ${morphTargets.length} morph target(s) for blinking`);
-      }
     }
   }, [gltf]);
 

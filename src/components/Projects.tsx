@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 
 interface Project {
@@ -96,7 +95,8 @@ export default function Projects() {
                     height={600}
                     className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    unoptimized
+                    quality={85}
+                    priority={index === 0}
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 dark:from-[rgba(0,0,0,0.6)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
