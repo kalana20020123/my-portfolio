@@ -48,28 +48,32 @@ export default function Navbar() {
   return (
     <>
       {/* Top Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 h-16 md:h-20 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm">
+      <header className="fixed top-0 left-0 right-0 z-50 h-16 md:h-20 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-sm">
         <div className="max-w-7xl mx-auto h-full px-4 md:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo/Name */}
           <button
             onClick={() => scrollToSection("#home")}
             className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+            aria-label="Go to home"
           >
             Kalana
           </button>
 
           {/* Navigation Links */}
-          <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
-            {navLinks.map((link) => (
-              <button
-                key={link.name}
-                onClick={() => scrollToSection(link.href)}
-                className="px-4 py-2 text-sm lg:text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-all duration-200"
-              >
-                {link.name}
-              </button>
-            ))}
-          </div>
+          <nav className="hidden md:flex items-center space-x-1 lg:space-x-2" aria-label="Main navigation">
+            <ul className="flex items-center space-x-1 lg:space-x-2 list-none m-0 p-0">
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <button
+                    onClick={() => scrollToSection(link.href)}
+                    className="px-4 py-2 text-sm lg:text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-all duration-200"
+                  >
+                    {link.name}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
           {/* Theme Toggle */}
           <div className="flex items-center gap-3">
@@ -92,7 +96,7 @@ export default function Navbar() {
             )}
           </div>
         </div>
-      </nav>
+      </header>
 
       {/* Spacer to prevent content overlap */}
       <div className="h-16 md:h-20" /> {/* Top navbar spacer */}

@@ -71,17 +71,17 @@ export default function Projects() {
       
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16 md:mb-20">
+        <header className="text-center mb-16 md:mb-20">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
             Projects
           </h2>
           <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-blue-600 dark:via-blue-400 to-transparent mx-auto"></div>
-        </div>
+        </header>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projects.map((project, index) => (
-            <div
+            <article
               key={index}
               className="group relative bg-white/80 dark:bg-[rgba(255,255,255,0.02)] backdrop-blur-sm rounded-xl border border-gray-200 dark:border-[rgba(255,255,255,0.08)] hover:border-blue-400 dark:hover:border-[rgba(59,130,246,0.3)] transition-all duration-300 hover:bg-blue-50/50 dark:hover:bg-[rgba(59,130,246,0.05)] hover:shadow-xl dark:hover:shadow-[0_8px_32px_rgba(59,130,246,0.15)] hover:-translate-y-1 overflow-hidden flex flex-col"
             >
@@ -149,23 +149,23 @@ export default function Projects() {
                   </a>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
         {/* Upcoming Projects Section */}
         {upcomingProjects.length > 0 && (
           <>
-            <div className="text-center mt-24 md:mt-32 mb-16 md:mb-20">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
+            <header className="text-center mt-24 md:mt-32 mb-16 md:mb-20">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
                 Upcoming Projects
-              </h2>
+              </h3>
               <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-purple-600 dark:via-purple-400 to-transparent mx-auto"></div>
-            </div>
+            </header>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {upcomingProjects.map((project, index) => (
-                <div
+                <article
                   key={index}
                   className="group relative bg-white/80 dark:bg-[rgba(255,255,255,0.02)] backdrop-blur-sm rounded-xl border border-gray-200 dark:border-[rgba(255,255,255,0.08)] hover:border-purple-400 dark:hover:border-[rgba(168,85,247,0.3)] transition-all duration-300 hover:bg-purple-50/50 dark:hover:bg-[rgba(168,85,247,0.05)] hover:shadow-xl dark:hover:shadow-[0_8px_32px_rgba(168,85,247,0.15)] hover:-translate-y-1 overflow-hidden flex flex-col opacity-90"
                 >
@@ -204,7 +204,7 @@ export default function Projects() {
                       </button>
                     </div>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </>

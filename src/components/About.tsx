@@ -172,12 +172,12 @@ export default function About() {
       
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-20 md:mb-24">
+        <header className="text-center mb-20 md:mb-24">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
             About Me
           </h2>
           <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-blue-600 dark:via-blue-400 to-transparent mx-auto"></div>
-        </div>
+        </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* 3D Model Section */}
@@ -191,7 +191,7 @@ export default function About() {
           </div>
 
           {/* Content Section */}
-          <div className="space-y-6">
+          <article className="space-y-6">
             <div className="relative">
               {/* Subtle glow effect */}
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 rounded-2xl blur-xl"></div>
@@ -207,7 +207,7 @@ export default function About() {
                 </div>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>

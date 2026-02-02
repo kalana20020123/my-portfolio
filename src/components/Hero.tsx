@@ -758,7 +758,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-purple-50/30 dark:from-[#0a0e1a] dark:via-[#0d0f14] dark:to-[#050608] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(59,130,246,0.1)_0%,_transparent_70%)] dark:bg-[radial-gradient(ellipse_at_center,_transparent_50%,_rgba(8,12,20,0.9)_100%)] pointer-events-none" />
       
-      <div className="relative z-10 flex-1 max-w-2xl space-y-6 mb-12 md:mb-0 md:pr-8">
+      <header className="relative z-10 flex-1 max-w-2xl space-y-6 mb-12 md:mb-0 md:pr-8">
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.1)] dark:drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
           Hi, I'm <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 dark:from-blue-400 dark:via-blue-500 dark:to-purple-500 bg-clip-text text-transparent">Kalana Sandeep</span>👋
         </h1>
@@ -773,6 +773,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             className="group relative inline-flex items-center px-6 py-3 text-base font-semibold text-white bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 dark:from-blue-500 dark:via-blue-600 dark:to-purple-500 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-700 hover:via-blue-800 hover:to-purple-700 dark:hover:from-blue-600 dark:hover:via-blue-700 dark:hover:to-purple-600"
+            aria-label="Download CV"
           >
             <svg
               className="w-5 h-5 mr-2"
@@ -790,7 +791,7 @@ export default function Hero() {
             Download CV
           </a>
         </div>
-      </div>
+      </header>
       <div 
         ref={canvasRef}
         className="relative z-10 flex-1 w-full h-[400px] md:h-[600px] touch-none"

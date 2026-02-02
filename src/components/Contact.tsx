@@ -72,7 +72,7 @@ export default function Contact() {
       
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16 md:mb-20">
+        <header className="text-center mb-16 md:mb-20">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
             Get In Touch
           </h2>
@@ -80,18 +80,18 @@ export default function Contact() {
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
             I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology. Feel free to reach out through any of the channels below.
           </p>
-        </div>
+        </header>
 
         {/* Contact Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {contactMethods.map((method, index) => (
-            <a
-              key={method.name}
-              href={method.href}
-              target={method.external ? "_blank" : undefined}
-              rel={method.external ? "noopener noreferrer" : undefined}
-              className="group relative"
-            >
+            <article key={method.name} className="group relative">
+              <a
+                href={method.href}
+                target={method.external ? "_blank" : undefined}
+                rel={method.external ? "noopener noreferrer" : undefined}
+                className="block h-full"
+              >
               {/* Glow effect */}
               <div className={`absolute -inset-0.5 bg-gradient-to-r ${method.color} rounded-xl opacity-0 group-hover:opacity-20 dark:group-hover:opacity-20 blur transition-opacity duration-300`}></div>
               
@@ -130,7 +130,8 @@ export default function Contact() {
                   </svg>
                 </div>
               </div>
-            </a>
+              </a>
+            </article>
           ))}
         </div>
 
